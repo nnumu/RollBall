@@ -19,12 +19,12 @@ public class StageMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_playerInput.ReadValue<Vector2>());
+
         // Stageを回転させる処理
         // 水平(horizontal)入力の取得
-        float horizontalInput = _playerInput.ReadValue<Vector2>().x;
+        float horizontalInput = _playerInput.ReadValue<Vector2>().x * 0.2f;
         // 垂直(vertical)入力の取得
-        float verticalInput = _playerInput.ReadValue<Vector2>().y;
+        float verticalInput = _playerInput.ReadValue<Vector2>().y * 0.2f;
 
         // オブジェクトを回転させる
         _stage.transform.Rotate(horizontalInput, 0f, verticalInput);
